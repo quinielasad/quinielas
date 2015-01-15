@@ -24,51 +24,73 @@
 
 		  <script type="text/javascript" src="js/jquery-1.7.1/jquery.min.js"></script>
 		   <script type="text/javascript" src="js/jquery-mobile-1.0/jquery.mobile.min.js"></script>
+		   <script type="text/javascript">
+			function getJson(){
+				var datosUsuario = $("#username").val();
+				var datosPassword = $("#password").val();
+	
+  				archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
+
+				$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
+
+					if(respuestaServer.estado == "OK"){
+		  				alert("ok");
+		 				/// si la validacion es correcta, muestra la pantalla "home"
+						$.mobile.changePage("#pagina5");
+		  
+					}else{
+		  				alert(respuestaServer.estado + " mensaje: " + respuestaServer.message);
+		  				/// ejecutar una conducta cuando la validacion falla
+					}
+  
+				});
+			}
+		  </script>
     </head>
-    <body>
+    <body onload="">
 	<!-- Jquery  Mobile utiliza los data de HTML 5, utilizare esto para indicar las componentes (page,header,content,footer) con estos atributos las librerias aplican
 	     diferentes estilos dependiendo del caso -->
 		 
 	<!--data-role="page": contenedor donde van los elemntos de la pagina (wrapper)-->
 		
 		<div id="home" data-role="page">
-	
-	<!--data-role="header": encabezado de la pagina-->	
-			
+			<div data-role="content">
+				<input type="text" id="username">
+				<input type="password" id="password">
+				<button onclick="getJson()">Enviar</button>		
+			</div>		
+		</div>
+		<div data-role="page" id="pagina5">
 			<div data-role="header">
 				<h1><FONT COLOR=f52f38>QUINIELA SOPRA</FONT></h1>
 			</div>
 			
 	<!--data-role="content" creamos una capa o div donde colocaremos el contenido del cuerpo de la pagina-->		
 		
-		<div data-role="content">	 				
-			<div>
-			<div class="texto">
-			   <!--<FONT FACE="Bradley Hand ITC">El farmacéutico de hospital ante el reto de la <b>SALUD 2.0</b></FONT> -->
-			   Suerte Sopranos <b>Quiniela 1xS</b>
-			</div>		
-			<!-- Las listas (ul,ol) estandares HTML lo convierto en listviews añadiendo el atributo (data-role="listview")(con ello se le aplica un estilo automatico)
-			    usando el atributo (data-inset="true") agregamos un margen a la lista (para que no se adapte 100% al ancho del contenedor)
-				
-				Jquery mobile cuenta con una serie de efectos para cambiar de pagina, para usarlo hemos añadido el atributo (data-transition).
-			    (data-transition:podemos usar los efectos (fade,pop,flip,turn,flow,slidefade,slide,slideup,slidedown,...))
-                (data-theme): para personalizar el tema del boton (a,b,c,...)
-                (data-dividertheme):para asignar un tema a los divisores de la lista
-                Jquery Mobile viene con 18 iconos predefinidos para los botones -->
-			</div>	
-			     <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="a"> 
+			<div data-role="content">	 				
+				<div>
+					<div class="texto">
+			   			<!--<FONT FACE="Bradley Hand ITC">El farmacéutico de hospital ante el reto de la <b>SALUD 2.0</b></FONT> -->
+			   			Suerte Sopranos <b>Quiniela 1xS</b>
+					</div>		
+					<!-- Las listas (ul,ol) estandares HTML lo convierto en listviews añadiendo el atributo (data-role="listview")(con ello se le aplica un estilo automatico)
+			   		 usando el atributo (data-inset="true") agregamos un margen a la lista (para que no se adapte 100% al ancho del contenedor)
+					
+					Jquery mobile cuenta con una serie de efectos para cambiar de pagina, para usarlo hemos añadido el atributo (data-transition).
+			    	(data-transition:podemos usar los efectos (fade,pop,flip,turn,flow,slidefade,slide,slideup,slidedown,...))
+                	(data-theme): para personalizar el tema del boton (a,b,c,...)
+                	(data-dividertheme):para asignar un tema a los divisores de la lista
+                	Jquery Mobile viene con 18 iconos predefinidos para los botones -->
+				</div>	
+			    <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="a"> 
 					<li data-icon="presentacion"><a href="#pagina1"  data-icon="presentacion" data-transition="fade" >Apuesta Comun</a></li>
 					<li data-icon="programa"><a href="#pagina2" data-transition="fade">Clasificación</a></li>
 					<li data-icon="grupo"><a href="#pagina3" data-transition="fade">Historico</a></li>
 					<li data-icon="mas"><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
 					<li data-icon="instrucciones"><a href="#instrucciones" data-transition="fade">Leeme</a></li> 
-				 </ul>		 				
-		     </div>
-		
-		
-			<!--data-role="footer": pie de pagina-->	
-				
-	</div>
+				</ul>		 				
+		    </div>
+		</div>
 		
 		<div data-role="page" id="pagina1">
 			<div data-role="header">
