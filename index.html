@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+   <head>
+		<title>QUINIELA SOPRA</title>
+	
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="author" content="AKM" />
+		<meta name ="description" content ="Quiniela creada para los Sopranos con el único objetivo de conseguir  la jubilación anticipada lo antes posible">
+		<!--El (meta tag viewport) sirve para que el contenido de la pagina de adapte al tamaño del dispositivo movil
+            con (witdth) le indico que se va adaptar al ancho del dispositvo, podemos poner una escala en pixeles
+            con (initial-scale)	esto es para indicar el nivel de zoom de la pagina cuando se cargue (nose cuantos puntos va tener mi app del congreso por ello lo
+			dejo en un tamaño adaptable)-->
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		
+		<!--Las palabras por las cuales, queremos que nuestro app sea encontrado-->
+		<meta name="keywords" content="Quinela Sopra, Quiniela, forrarse, ganar dinero por doquier" />
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+		
+		<!-- Los estilos de mi app -->
+		   <link type="text/css" rel="stylesheet" href="css/estiloQuiniela/Quiniela_jquerymobile.css" />
+		  
+		   <!--<script src="phonegap.js"></script>-->
+
+		  <script type="text/javascript" src="js/jquery-1.7.1/jquery.min.js"></script>
+		   <script type="text/javascript" src="js/jquery-mobile-1.0/jquery.mobile.min.js"></script>
+    </head>
+    <body>
+	<!-- Jquery  Mobile utiliza los data de HTML 5, utilizare esto para indicar las componentes (page,header,content,footer) con estos atributos las librerias aplican
+	     diferentes estilos dependiendo del caso -->
+		 
+	<!--data-role="page": contenedor donde van los elemntos de la pagina (wrapper)-->
+		
+		<div id="home" data-role="page">
+	
+	<!--data-role="header": encabezado de la pagina-->	
+			
+			<div data-role="header">
+				<h1><FONT COLOR=f52f38>QUINIELA SOPRA</FONT></h1>
+			</div>
+			
+	<!--data-role="content" creamos una capa o div donde colocaremos el contenido del cuerpo de la pagina-->		
+		
+		<div data-role="content">	 				
+			<div>
+			<div class="texto">
+			   <!--<FONT FACE="Bradley Hand ITC">El farmacéutico de hospital ante el reto de la <b>SALUD 2.0</b></FONT> -->
+			   Suerte Sopranos <b>Quiniela 1xS</b>
+			</div>		
+			<!-- Las listas (ul,ol) estandares HTML lo convierto en listviews añadiendo el atributo (data-role="listview")(con ello se le aplica un estilo automatico)
+			    usando el atributo (data-inset="true") agregamos un margen a la lista (para que no se adapte 100% al ancho del contenedor)
+				
+				Jquery mobile cuenta con una serie de efectos para cambiar de pagina, para usarlo hemos añadido el atributo (data-transition).
+			    (data-transition:podemos usar los efectos (fade,pop,flip,turn,flow,slidefade,slide,slideup,slidedown,...))
+                (data-theme): para personalizar el tema del boton (a,b,c,...)
+                (data-dividertheme):para asignar un tema a los divisores de la lista
+                Jquery Mobile viene con 18 iconos predefinidos para los botones -->
+			</div>	
+			     <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="a"> 
+					<li data-icon="presentacion"><a href="#pagina1"  data-icon="presentacion" data-transition="fade" >Apuesta Comun</a></li>
+					<li data-icon="programa"><a href="#pagina2" data-transition="fade">Clasificación</a></li>
+					<li data-icon="grupo"><a href="#pagina3" data-transition="fade">Historico</a></li>
+					<li data-icon="mas"><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
+					<li data-icon="instrucciones"><a href="#instrucciones" data-transition="fade">Leeme</a></li> 
+				 </ul>		 				
+		     </div>
+		
+		
+			<!--data-role="footer": pie de pagina-->	
+				
+	</div>
+		
+		<div data-role="page" id="pagina1">
+			<div data-role="header">
+				<h1><font COLOR=f72b4c>Apuesta Comun</font></h1>				
+			</div>
+			<div data-role="content">
+			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>				
+				
+				<div class="titulo">
+				<p><b>La lista de apuestas comunes</b></p>
+				</div>
+				
+            <div data-role="content">    
+       <table>
+	       <tr><td><center>Partido</center></td><td><center>1</center></td><td><center>X</center></td><td><center>2</center></td></tr>
+           <tr><td>Málaga - Villarreal</td><td>0%</td><td>0%</td><td>100%</td></tr>
+           <tr><td>Atlhetic Club - Elche</td><td>10%</td><td>0%</td><td>90%</td></tr>
+           <tr><td>Granada - Real Sociedad</td><td>10%</td><td>10%</td><td>80%</td></tr>
+           <tr><td>Eibar - Getafe</td><td>0%</td><td>80%</td><td>20%</td></tr>
+           <tr><td>Barcelona - At. Madrid</td><td>40%</td><td>50%</td><td>10%</td></tr>
+		   <tr><td>Celta - Valencia</td><td>0%</td><td>0%</td><td>100%</td></tr>
+           <tr><td>Almeria - Sevilla</td><td>0%</td><td>10%</td><td>90%</td></tr>
+           <tr><td>Sabadell - Sporting</td><td>5%</td><td>15%</td><td>80%</td></tr>
+           <tr><td>Betis - Tenerife</td><td>80%</td><td>0%</td><td>20%</td></tr>
+           <tr><td>Ponferradina - Racing</td><td>0%</td><td>90%</td><td>10%</td></tr>
+		   <tr><td>Albacete - Lugo</td><td>0%</td><td>0%</td><td>100%</td></tr>
+           <tr><td>Girona - Mallorca</td><td>0%</td><td>10%</td><td>90%</td></tr>
+           <tr><td>Valladolid - Alavés</td><td>90%</td><td>10%</td><td>0%</td></tr>
+           <tr><td>Las Palmas - Zaragoza</td><td>60%</td><td>20%</td><td>20%</td></tr>
+           <tr><td>R. Madrid - Espanyol</td><td>M</td><td>0</td></tr>
+       </table>
+    </div><!-- /content -->
+</div><!-- /page -->
+				
+				
+				
+				
+				
+          </div>
+	   </div>
+	  
+	  <!--Pagina de Clasificación -->
+		
+	<div data-role="page" id="pagina2">
+			<div data-role="header">
+				<h1><font COLOR=f72b4c>Clasificacion</font></h1>						
+			</div>
+			
+			<div data-role="content">	
+			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
+			<div data-role="content">
+				<p>
+			<i>Resultados de la clasificacion</i>
+				</p>
+           </div>
+									 
+			</div>	
+			
+			
+	</div>
+	   
+	    <!--Pagina  del Historico -->
+		
+		<div data-role="page" id="pagina3">
+			<div data-role="header">
+			    <h1><font COLOR=f72b4c>Historico</font></h1>			
+			</div>
+			<div data-role="content">
+			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
+				<p>
+			<i>Consulte el historico de Jornadas.</i>
+				</p>	
+		 </div>			 
+       </div>
+
+	 <!--Pagina  de tesoreria  -->
+		
+		<div data-role="page" id="pagina4">
+			<div data-role="header">
+				<h1><font COLOR=f72b4c>Tesorer&iacute;a</font></h1>				
+			</div>
+			<div data-role="content">
+			<a data-rel="back" data-role="button" data-icon="CasaT" data-inline="true" data-transition="fade">Casa</a>
+				
+			         
+		 
+		         <div data-role="collapsible" data-theme="a"  >
+                  
+				  <h3>Dani</h3>          
+                         
+                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
+                              				 
+                             </div>
+				</div>			 
+				<div data-role="collapsible" data-theme="a"  >	 
+				<h3>Artur</h3>          
+                         
+                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
+                              			 
+                     </div>
+                	
+		          </div>	
+				  
+				  <div data-role="collapsible" data-theme="a"  >	 
+				<h3>Juanma</h3>          
+                         
+                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
+                              
+                              </div>
+                	
+		          </div>	
+	
+           </div>
+       </div>
+	
+	
+	  <!--Pagina para las instrucciones de uso-->
+	   
+	<div id="instrucciones" data-role="page">
+			<div data-role="header">
+				 <h1><font COLOR=f72b4c>Instrucciones de Uso</font></h1>	
+			</div>
+			<div data-role="content">	
+			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
+			
+
+			<div data-role="content">
+				<p>
+			<i>Realizar mi apuesta:Para realizar la apuesta. Se debe acceder a la hoja con tu nombre y marcar un valor para cada partido.Interpretar la hoja Apuesta Común.</i>
+				</p>
+           </div>
+									 
+			</div>			
+		</div>
+	   	    				
+	</body>
+</html>
