@@ -28,18 +28,20 @@
 			function getJson(){
 				var datosUsuario = $("#username").val();
 				var datosPassword = $("#password").val();
-	
+				//prod: http://darteaga.com
+				//des: http://localhost
   				archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
 
 				$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 					if(respuestaServer.estado == "OK"){
-		  				alert("ok");
+		  				//alert("ok");
 		 				/// si la validacion es correcta, muestra la pantalla "home"
 						$.mobile.changePage("#pagina5");
 		  
 					}else{
-		  				alert(respuestaServer.estado + " mensaje: " + respuestaServer.message);
+		  				
+		  				$("#home").append("<p>" +respuestaServer.estado + " mensaje: " + respuestaServer.message +"</p>");
 		  				/// ejecutar una conducta cuando la validacion falla
 					}
   
