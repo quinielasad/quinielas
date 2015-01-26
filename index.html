@@ -46,20 +46,29 @@
 					}
   
 				});
+				return false;
 			}
+			$(document).ready(function(){
+				$("#login").submit(getJson);
+			});
 		  </script>
     </head>
-    <body onload="">
+    <body>
 	<!-- Jquery  Mobile utiliza los data de HTML 5, utilizare esto para indicar las componentes (page,header,content,footer) con estos atributos las librerias aplican
 	     diferentes estilos dependiendo del caso -->
 		 
 	<!--data-role="page": contenedor donde van los elemntos de la pagina (wrapper)-->
 		
 		<div id="home" data-role="page">
+			<div data-role="header">
+				<h1><font COLOR=f72b4c>Login</font></h1>				
+			</div>
 			<div data-role="content">
-				<input type="text" id="username">
-				<input type="password" id="password">
-				<button onclick="getJson()">Enviar</button>		
+				<form id="login">
+					<input type="text" id="username">
+					<input type="password" id="password">
+					<input type="submit" value="Enviar"></input>	
+				</form>	
 			</div>		
 		</div>
 		<div data-role="page" id="pagina5">
@@ -67,8 +76,7 @@
 				<h1><FONT COLOR=f52f38>QUINIELA SOPRA</FONT></h1>
 			</div>
 			
-	<!--data-role="content" creamos una capa o div donde colocaremos el contenido del cuerpo de la pagina-->		
-		
+			<!--data-role="content" creamos una capa o div donde colocaremos el contenido del cuerpo de la pagina-->	
 			<div data-role="content">	 				
 				<div>
 					<div class="texto">
@@ -89,7 +97,8 @@
 					<li data-icon="programa"><a href="#pagina2" data-transition="fade">Clasificación</a></li>
 					<li data-icon="grupo"><a href="#pagina3" data-transition="fade">Historico</a></li>
 					<li data-icon="mas"><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
-					<li data-icon="instrucciones"><a href="#instrucciones" data-transition="fade">Leeme</a></li> 
+					<li data-icon="instrucciones"><a href="#instrucciones" data-transition="fade">Leeme</a></li>
+					<li data-icon="instrucciones"><a href="#home" data-transition="fade">Salir</a></li> 
 				</ul>		 				
 		    </div>
 		</div>
@@ -99,60 +108,50 @@
 				<h1><font COLOR=f72b4c>Apuesta Comun</font></h1>				
 			</div>
 			<div data-role="content">
-			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>				
+				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>				
 				
 				<div class="titulo">
-				<p><b>La lista de apuestas comunes</b></p>
+					<p><b>La lista de apuestas comunes</b></p>
 				</div>
 				
-            <div data-role="content">    
-       <table>
-	       <tr><td><center>Partido</center></td><td><center>1</center></td><td><center>X</center></td><td><center>2</center></td></tr>
-           <tr><td>Málaga - Villarreal</td><td>0%</td><td>0%</td><td>100%</td></tr>
-           <tr><td>Atlhetic Club - Elche</td><td>10%</td><td>0%</td><td>90%</td></tr>
-           <tr><td>Granada - Real Sociedad</td><td>10%</td><td>10%</td><td>80%</td></tr>
-           <tr><td>Eibar - Getafe</td><td>0%</td><td>80%</td><td>20%</td></tr>
-           <tr><td>Barcelona - At. Madrid</td><td>40%</td><td>50%</td><td>10%</td></tr>
-		   <tr><td>Celta - Valencia</td><td>0%</td><td>0%</td><td>100%</td></tr>
-           <tr><td>Almeria - Sevilla</td><td>0%</td><td>10%</td><td>90%</td></tr>
-           <tr><td>Sabadell - Sporting</td><td>5%</td><td>15%</td><td>80%</td></tr>
-           <tr><td>Betis - Tenerife</td><td>80%</td><td>0%</td><td>20%</td></tr>
-           <tr><td>Ponferradina - Racing</td><td>0%</td><td>90%</td><td>10%</td></tr>
-		   <tr><td>Albacete - Lugo</td><td>0%</td><td>0%</td><td>100%</td></tr>
-           <tr><td>Girona - Mallorca</td><td>0%</td><td>10%</td><td>90%</td></tr>
-           <tr><td>Valladolid - Alavés</td><td>90%</td><td>10%</td><td>0%</td></tr>
-           <tr><td>Las Palmas - Zaragoza</td><td>60%</td><td>20%</td><td>20%</td></tr>
-           <tr><td>R. Madrid - Espanyol</td><td>M</td><td>0</td></tr>
-       </table>
-    </div><!-- /content -->
-</div><!-- /page -->
-				
-				
-				
-				
-				
-          </div>
-	   </div>
+            	<div data-role="content">    
+	       			<table>
+				       <tr><td><center>Partido</center></td><td><center>1</center></td><td><center>X</center></td><td><center>2</center></td></tr>
+			           <tr><td>Málaga - Villarreal</td><td>0%</td><td>0%</td><td>100%</td></tr>
+			           <tr><td>Atlhetic Club - Elche</td><td>10%</td><td>0%</td><td>90%</td></tr>
+			           <tr><td>Granada - Real Sociedad</td><td>10%</td><td>10%</td><td>80%</td></tr>
+			           <tr><td>Eibar - Getafe</td><td>0%</td><td>80%</td><td>20%</td></tr>
+			           <tr><td>Barcelona - At. Madrid</td><td>40%</td><td>50%</td><td>10%</td></tr>
+					   <tr><td>Celta - Valencia</td><td>0%</td><td>0%</td><td>100%</td></tr>
+			           <tr><td>Almeria - Sevilla</td><td>0%</td><td>10%</td><td>90%</td></tr>
+			           <tr><td>Sabadell - Sporting</td><td>5%</td><td>15%</td><td>80%</td></tr>
+			           <tr><td>Betis - Tenerife</td><td>80%</td><td>0%</td><td>20%</td></tr>
+			           <tr><td>Ponferradina - Racing</td><td>0%</td><td>90%</td><td>10%</td></tr>
+					   <tr><td>Albacete - Lugo</td><td>0%</td><td>0%</td><td>100%</td></tr>
+			           <tr><td>Girona - Mallorca</td><td>0%</td><td>10%</td><td>90%</td></tr>
+			           <tr><td>Valladolid - Alavés</td><td>90%</td><td>10%</td><td>0%</td></tr>
+			           <tr><td>Las Palmas - Zaragoza</td><td>60%</td><td>20%</td><td>20%</td></tr>
+			           <tr><td>R. Madrid - Espanyol</td><td>M</td><td>0</td></tr>
+	       			</table>
+    			</div><!-- /content -->
+			</div><!-- /page -->
+        </div>
 	  
 	  <!--Pagina de Clasificación -->
-		
-	<div data-role="page" id="pagina2">
+		<div data-role="page" id="pagina2">
 			<div data-role="header">
 				<h1><font COLOR=f72b4c>Clasificacion</font></h1>						
 			</div>
-			
+				
 			<div data-role="content">	
-			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
-			<div data-role="content">
-				<p>
-			<i>Resultados de la clasificacion</i>
-				</p>
-           </div>
-									 
-			</div>	
-			
-			
-	</div>
+				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
+				<div data-role="content">
+					<p>
+						<i>Resultados de la clasificacion</i>
+					</p>
+		        </div>				 
+			</div>					
+		</div>
 	   
 	    <!--Pagina  del Historico -->
 		
@@ -161,70 +160,56 @@
 			    <h1><font COLOR=f72b4c>Historico</font></h1>			
 			</div>
 			<div data-role="content">
-			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
+				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
 				<p>
-			<i>Consulte el historico de Jornadas.</i>
+					<i>Consulte el historico de Jornadas.</i>
 				</p>	
 		 </div>			 
        </div>
 
 	 <!--Pagina  de tesoreria  -->
-		
 		<div data-role="page" id="pagina4">
 			<div data-role="header">
 				<h1><font COLOR=f72b4c>Tesorer&iacute;a</font></h1>				
 			</div>
 			<div data-role="content">
-			<a data-rel="back" data-role="button" data-icon="CasaT" data-inline="true" data-transition="fade">Casa</a>
-				
-			         
-		 
-		         <div data-role="collapsible" data-theme="a"  >
-                  
-				  <h3>Dani</h3>          
-                         
-                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
-                              				 
-                             </div>
+				<a data-rel="back" data-role="button" data-icon="CasaT" data-inline="true" data-transition="fade">Casa</a>
+			    <div data-role="collapsible" data-theme="a"  >
+	                  <h3>Dani</h3>          
+	                  <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
+	                              				 
+	                  </div>
 				</div>			 
 				<div data-role="collapsible" data-theme="a"  >	 
-				<h3>Artur</h3>          
-                         
-                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
-                              			 
-                     </div>
-                	
-		          </div>	
-				  
-				  <div data-role="collapsible" data-theme="a"  >	 
-				<h3>Juanma</h3>          
-                         
-                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
-                              
-                              </div>
-                	
-		          </div>	
-	
+					<h3>Artur</h3>          
+	                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
+	                              			 
+	                </div>
+	                	
+			    </div>	
+				<div data-role="collapsible" data-theme="a"  >	 
+					<h3>Juanma</h3>          
+	                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"> 
+	                              
+	                </div>
+	                	
+		        </div>	
            </div>
        </div>
-	
-	
+
 	  <!--Pagina para las instrucciones de uso-->
 	   
-	<div id="instrucciones" data-role="page">
+		<div id="instrucciones" data-role="page">
 			<div data-role="header">
-				 <h1><font COLOR=f72b4c>Instrucciones de Uso</font></h1>	
+				<h1><font COLOR=f72b4c>Instrucciones de Uso</font></h1>	
 			</div>
 			<div data-role="content">	
-			<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
-			
-
-			<div data-role="content">
-				<p>
-			<i>Realizar mi apuesta:Para realizar la apuesta. Se debe acceder a la hoja con tu nombre y marcar un valor para cada partido.Interpretar la hoja Apuesta Común.</i>
-				</p>
-           </div>
-									 
+				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
+				<div data-role="content">
+					<p>
+						<i>Realizar mi apuesta:Para realizar la apuesta. Se debe acceder a la hoja con tu nombre y marcar un valor para cada partido.Interpretar la hoja Apuesta Común.</i>
+					</p>
+	            </div>						 
 			</div>			
 		</div>
 	   	    				
