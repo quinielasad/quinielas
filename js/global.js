@@ -11,7 +11,7 @@ function login(){
 		if(respuestaServer.estado == "OK"){
 		  	//alert("ok");
 		 	/// si la validacion es correcta, muestra la pantalla "home"
-			$.mobile.changePage("#pagina5");
+			$.mobile.changePage("#home");
 		  
 		}else{
 		  				
@@ -23,6 +23,26 @@ function login(){
 	return false;
 }
 
+//funciones para evitar que funcione el backButton en android
+function onDeviceReady() {
+   document.addEventListener("backbutton", onBackKeyPress, false);
+}
+function onBackKeyPress() {
+    /* If the current page is the login page, disable the button completely (aka do nothing) */
+    if ($.mobile.activePage.attr('id') == 'login_page') {
+
+    }else {
+        if (confirm("¿Quieres salir de la app?")) {
+        /* Here is where my AJAX code for logging off goes */
+        }else {
+            return false;
+        }
+    }
+}
+document.addEventListener("deviceready", onDeviceReady, false);
+
+//funcion que añade las funcionalidad a los botones
 $(document).ready(function(){
 	$("#login").submit(login);
 });
+
