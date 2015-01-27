@@ -24,22 +24,11 @@ function login(){
 }
 
 //funciones para evitar que funcione el backButton en android
-function onDeviceReady() {
-   document.addEventListener("backbutton", onBackKeyPress, false);
-}
-function onBackKeyPress() {
-    /* If the current page is the login page, disable the button completely (aka do nothing) */
-    if ($.mobile.activePage.attr('id') == 'login_page') {
-
-    }else {
-        if (confirm("¿Quieres salir de la app?")) {
-        /* Here is where my AJAX code for logging off goes */
-        }else {
-            return false;
-        }
-    }
-}
 document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );}
 
 //funcion que añade las funcionalidad a los botones
 $(document).ready(function(){
