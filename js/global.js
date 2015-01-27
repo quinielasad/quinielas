@@ -23,12 +23,6 @@ function login(){
 	return false;
 }
 
-//funciones para evitar que funcione el backButton en android
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    document.addEventListener("backbutton", function (e) {
-        e.preventDefault();
-    }, false );}
 
 //funcion que añade las funcionalidad a los botones
 $(document).ready(function(){
