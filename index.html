@@ -18,62 +18,35 @@
 		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
 		
 		<!-- Los estilos de mi app -->
-		   <link type="text/css" rel="stylesheet" href="css/estiloQuiniela/Quiniela_jquerymobile.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
 		  
 		   <!--<script src="phonegap.js"></script>-->
 
-		  <script type="text/javascript" src="js/jquery-1.7.1/jquery.min.js"></script>
-		   <script type="text/javascript" src="js/jquery-mobile-1.0/jquery.mobile.min.js"></script>
-		   <script type="text/javascript">
-			function getJson(){
-				var datosUsuario = $("#username").val();
-				var datosPassword = $("#password").val();
-				//prod: http://darteaga.com
-				//des: http://localhost
-  				archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
-
-				$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
-
-					if(respuestaServer.estado == "OK"){
-		  				//alert("ok");
-		 				/// si la validacion es correcta, muestra la pantalla "home"
-						$.mobile.changePage("#pagina5");
-		  
-					}else{
-		  				
-		  				$("#home").append("<p>" +respuestaServer.estado + " mensaje: " + respuestaServer.message +"</p>");
-		  				/// ejecutar una conducta cuando la validacion falla
-					}
-  
-				});
-				return false;
-			}
-			$(document).ready(function(){
-				$("#login").submit(getJson);
-			});
-		  </script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.mobile.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
     </head>
     <body>
 	<!-- Jquery  Mobile utiliza los data de HTML 5, utilizare esto para indicar las componentes (page,header,content,footer) con estos atributos las librerias aplican
 	     diferentes estilos dependiendo del caso -->
 		 
 	<!--data-role="page": contenedor donde van los elemntos de la pagina (wrapper)-->
-		
 		<div id="home" data-role="page">
 			<div data-role="header">
-				<h1><font COLOR=f72b4c>Login</font></h1>				
+				<h1><font>Login</font></h1>				
 			</div>
 			<div data-role="content">
 				<form id="login">
 					<input type="text" id="username">
 					<input type="password" id="password">
 					<input type="submit" value="Enviar"></input>	
-				</form>	
+				</form>
+				<div id="login_errors"></div>
 			</div>		
 		</div>
 		<div data-role="page" id="pagina5">
 			<div data-role="header">
-				<h1><FONT COLOR=f52f38>QUINIELA SOPRA</FONT></h1>
+				<h1><FONT >QUINIELA SOPRA</FONT></h1>
 			</div>
 			
 			<!--data-role="content" creamos una capa o div donde colocaremos el contenido del cuerpo de la pagina-->	
@@ -105,7 +78,7 @@
 		
 		<div data-role="page" id="pagina1">
 			<div data-role="header">
-				<h1><font COLOR=f72b4c>Apuesta Comun</font></h1>				
+				<h1><font >Apuesta Comun</font></h1>				
 			</div>
 			<div data-role="content">
 				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>				
@@ -140,7 +113,7 @@
 	  <!--Pagina de Clasificación -->
 		<div data-role="page" id="pagina2">
 			<div data-role="header">
-				<h1><font COLOR=f72b4c>Clasificacion</font></h1>						
+				<h1><font >Clasificacion</font></h1>						
 			</div>
 				
 			<div data-role="content">	
@@ -157,7 +130,7 @@
 		
 		<div data-role="page" id="pagina3">
 			<div data-role="header">
-			    <h1><font COLOR=f72b4c>Historico</font></h1>			
+			    <h1><font >Historico</font></h1>			
 			</div>
 			<div data-role="content">
 				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>
@@ -170,7 +143,7 @@
 	 <!--Pagina  de tesoreria  -->
 		<div data-role="page" id="pagina4">
 			<div data-role="header">
-				<h1><font COLOR=f72b4c>Tesorer&iacute;a</font></h1>				
+				<h1><font >Tesorer&iacute;a</font></h1>				
 			</div>
 			<div data-role="content">
 				<a data-rel="back" data-role="button" data-icon="CasaT" data-inline="true" data-transition="fade">Casa</a>
@@ -201,7 +174,7 @@
 	   
 		<div id="instrucciones" data-role="page">
 			<div data-role="header">
-				<h1><font COLOR=f72b4c>Instrucciones de Uso</font></h1>	
+				<h1><font >Instrucciones de Uso</font></h1>	
 			</div>
 			<div data-role="content">	
 				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>

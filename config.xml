@@ -4,14 +4,11 @@
         version: Cuanto más grande mejor | versionCode:Es opcional(Se usa para los casos por ejemplo de Android)-->
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"	
-        id        = "com.akm.QuinelasSopra"
-        versionCode="10" 
-        version   = "1.0.0">
+        id        = "com.akmdab.QuinelasSopra"
+        versionCode="000" 
+        version   = "0.0.1">
     <!-- Para el caso de los iOS hace falta indicar que la compilación sea universal -->
-	<!-- <preference name="target-device" value="universal" /> -->
-	
-	<!-- Voy a especificar para la aplicación del congreso una version de phonegap de preferencia que sera 2.9 (por si necesito aprovechar sus ventajas),
-	con ello todas las construcciones se ajustarán a esa versión -->	
+	<!-- <preference name="target-device" value="universal" /> -->	
 	<preference name="phonegap-version" value="3.3.0" />
 
     <!--El nombre de mi app -->
@@ -25,14 +22,14 @@
        AKM y DAB
     </author>
 	
-	<icon src="appicon2.png" gap:role="default" />
-	<icon src="icon_72.png" width="96" height="96" />
-	<icon src="icon_72.png" width="72" height="72" />
-	<icon src="icon_48.png" width="48" height="48" />
-	<icon src="icon_36.png" width="36" height="36" />
+	<icon src="img/appicon2.png" gap:role="default" />
+	<icon src="img/icon_72.png" width="96" height="96" />
+	<icon src="img/icon_72.png" width="72" height="72" />
+	<icon src="img/icon_48.png" width="48" height="48" />
+	<icon src="img/icon_36.png" width="36" height="36" />
 	
     <!-- Imagen que muestra mientras se carga la app -->
-	<gap:splash src="appinicio.png" />
+	<gap:splash src="img/appinicio.png" />
 	<gap:plugin name="com.adobe.plugins.gaplugin" />
 	
 	
@@ -46,6 +43,7 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 	
+    <!--Componente que permite el acceso a cualquier dominio desde la app-->
     <access origin="*" />
 
 </widget>
