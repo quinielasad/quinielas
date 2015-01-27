@@ -22,7 +22,7 @@
     </description>
     <!--Autor de la app -->
     <author href="https://build.phonegap.com" email="quinielasad@gmail.com">
-       AKM y DB
+       AKM y DAB
     </author>
 	
 	<icon src="appicon2.png" gap:role="default" />
@@ -36,16 +36,16 @@
 	<gap:plugin name="com.adobe.plugins.gaplugin" />
 	
 	
-<!-- Componentes phonegap -->
-<feature name="http://api.phonegap.com/1.0/battery"/>
-<feature name="http://api.phonegap.com/1.0/camera"/>
-<feature name="http://api.phonegap.com/1.0/contacts"/>
-<feature name="http://api.phonegap.com/1.0/file"/>
-<feature name="http://api.phonegap.com/1.0/geolocation"/>
-<feature name="http://api.phonegap.com/1.0/media"/>
-<feature name="http://api.phonegap.com/1.0/network"/>
-<feature name="http://api.phonegap.com/1.0/notification"/>
+    <!-- Componentes phonegap -->
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/contacts"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
 	
-
+    <access origin="*" />
 
 </widget>
