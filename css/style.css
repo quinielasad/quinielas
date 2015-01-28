@@ -1,0 +1,9 @@
+.login_error{
+	margin-top: 40px;
+	padding: 7px;
+	text-align: center;
+	color: red;
+	border: 1px solid #eee;
+	font-size: 12px;
+	background-color: #eee;
+}

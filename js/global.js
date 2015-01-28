@@ -9,14 +9,18 @@ function login(){
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
-		  	//alert("ok");
-		 	/// si la validacion es correcta, muestra la pantalla "home"
+		 	//Poner los campos del formulario en blanco.
+		 	$("#username").val("");
+			$("#password").val("");
+			$("#login_errors").html("");
+			/// si la validacion es correcta, muestra la pantalla "home"
 			$.mobile.changePage("#home");
 		  
 		}else{
-		  				
-		  	$("#login_errors").append("<p>" +respuestaServer.estado + " mensaje: " + respuestaServer.message +"</p>");
-		  				/// ejecutar una conducta cuando la validacion falla
+		  	
+		  	//Si la validación falla imprime error.			
+		  	$("#login_errors").html("<p class='login_error'>" +respuestaServer.estado + ": " + respuestaServer.message +"</p>");
+		  	$(".login_error").delay(3000).fadeOut(600);
 		}
   
 	});
@@ -27,7 +31,12 @@ function login(){
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     document.addEventListener("backbutton", function (e) {
-        e.preventDefault();
+    	if(!$.mobile.activePage.is("login_page") ){
+    		e.preventDefault();
+    	}else{
+    		navigator.app.exitApp();
+    	}
+        
     }, false );}
 
 //funcion que añade las funcionalidad a los botones

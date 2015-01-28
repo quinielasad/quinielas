@@ -19,6 +19,7 @@
 		
 		<!-- Los estilos de mi app -->
 		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		  
 		
 		<script src="phonegap.js"></script>
@@ -32,13 +33,11 @@
 		 
 	<!--data-role="page": contenedor donde van los elemntos de la pagina (wrapper)-->
 		<div id="login_page" data-role="page">
-			<div data-role="header">
-				<h1><font>Login</font></h1>				
-			</div>
 			<div data-role="content">
+				<h1>QUINIELA SOPRA</h1>
 				<form id="login">
-					<input type="text" id="username">
-					<input type="password" id="password">
+					<input type="text" id="username" placeholder="Username">
+					<input type="password" id="password" placeholder="Password">
 					<input type="submit" value="Enviar"></input>	
 				</form>
 				<div id="login_errors"></div>
@@ -67,12 +66,12 @@
                 	Jquery Mobile viene con 18 iconos predefinidos para los botones -->
 				</div>	
 			    <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="a"> 
-					<li data-icon="presentacion"><a href="#pagina1"  data-icon="presentacion" data-transition="fade" >Apuesta Comun</a></li>
-					<li data-icon="programa"><a href="#pagina2" data-transition="fade">Clasificación</a></li>
-					<li data-icon="grupo"><a href="#pagina3" data-transition="fade">Historico</a></li>
-					<li data-icon="mas"><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
-					<li data-icon="instrucciones"><a href="#instrucciones" data-transition="fade">Leeme</a></li>
-					<li data-icon="instrucciones"><a href="#login_page" data-transition="fade">Salir</a></li> 
+					<li data-icon="plus"><a href="#pagina1"  data-icon="plus" data-transition="fade" >Apuesta Comun</a></li>
+					<li data-icon="plus"><a href="#pagina2" data-transition="fade">Clasificación</a></li>
+					<li data-icon="plus"><a href="#pagina3" data-transition="fade">Historico</a></li>
+					<li data-icon="plus"><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
+					<li data-icon="plus"><a href="#instrucciones" data-transition="fade">Leeme</a></li>
+					<li data-icon="plus"><a href="#login_page" data-transition="fade">Salir</a></li> 
 				</ul>		 				
 		    </div>
 		</div>
