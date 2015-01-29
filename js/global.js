@@ -33,7 +33,7 @@ function onDeviceReady() {
     document.addEventListener("backbutton", function (e) {
     	if($.mobile.activePage.is("#home") ){
     		e.preventDefault();
-    	}if else ($.mobile.activePage.is("#login_page")){
+    	}else if ($.mobile.activePage.is("#login_page")){
     		navigator.app.exitApp();
     	}else{
     		if (confirm("¿Quiere salir de la app?")) {
