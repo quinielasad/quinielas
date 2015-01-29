@@ -31,10 +31,16 @@ function login(){
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     document.addEventListener("backbutton", function (e) {
-    	if(!$.mobile.activePage.is("login_page") ){
+    	if($.mobile.activePage.is("#home") ){
     		e.preventDefault();
-    	}else{
+    	}if else ($.mobile.activePage.is("#login_page")){
     		navigator.app.exitApp();
+    	}else{
+    		if (confirm("¿Quiere salir de la app?")) {
+    			navigator.app.exitApp();
+    		}else{
+    			e.preventDefault();
+    		}    		
     	}
         
     }, false );}
