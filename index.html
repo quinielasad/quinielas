@@ -22,9 +22,10 @@
 		<link rel="stylesheet" href="css/style.css" />
 		  
 		
-		<script src="phonegap.js"></script>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.mobile.js"></script>
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile.js"></script>
+		<script type="text/javascript" src="js/fileIO.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
     </head>
     <body>
@@ -34,10 +35,17 @@
 	<!--data-role="page": contenedor donde van los elemntos de la pagina (wrapper)-->
 		<div id="login_page" data-role="page">
 			<div data-role="content">
-				<h1>QUINIELA SOPRA</h1>
+				<p class="center"><img src="img/appicon2.png"/><p>
+				<h2 class="center">QUINIELA SOPRA</h2>
 				<form id="login">
 					<input type="text" id="username" placeholder="Username">
 					<input type="password" id="password" placeholder="Password">
+					<div class="containing-element">
+						<select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
+							<option value="off">Recordar</option>
+							<option value="on">Recordar</option>
+						</select>
+					</div>
 					<input type="submit" value="Enviar"></input>	
 				</form>
 				<div id="login_errors"></div>

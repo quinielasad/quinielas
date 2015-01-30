@@ -2,20 +2,25 @@
 function login(){
 	var datosUsuario = $("#username").val();
 	var datosPassword = $("#password").val();
+	var datosRecord = $("#login #flip-mini option:selected").val();
 	//prod: http://darteaga.com
 	//des: http://localhost
+
   	archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
 
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
+			if(datosRecord=="On"){
+				saveText('{"username":"'+datosUsuario+'","password":"'+datosPassword+'"}');
+			}
 		 	//Poner los campos del formulario en blanco.
 		 	$("#username").val("");
 			$("#password").val("");
 			$("#login_errors").html("");
 			/// si la validacion es correcta, muestra la pantalla "home"
 			$.mobile.changePage("#home");
-		  
+		  	
 		}else{
 		  	
 		  	//Si la validación falla imprime error.			
@@ -47,7 +52,12 @@ function onDeviceReady() {
     		navigator.app.backHistory();   		
     	}
         
-    }, false );}
+    }, false );
+
+//acceso archivos.
+var fail = failCB('requestFileSystem');
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+}
 
 //funcion que añade las funcionalidad a los botones
 $(document).ready(function(){

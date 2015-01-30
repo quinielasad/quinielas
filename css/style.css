@@ -4,6 +4,22 @@
 	text-align: center;
 	color: red;
 	border: 1px solid #eee;
-	font-size: 12px;
+	font-size: 13px;
 	background-color: #eee;
+}
+.center{
+	text-align: center;
+}
+
+.containing-element .ui-slider-switch { 
+	width: 9em;
+}
+.containing-element .ui-slider{
+	float: left;
+	margin-right: 15px;
+}
+#login_page img {
+	max-width: 50%;
+	margin-top: -12%;
+	margin-bottom: -10%;
 }
