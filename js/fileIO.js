@@ -1,27 +1,18 @@
- var FILENAME = 'database.db',
-           
-failCB = function (msg) {
-    return function () {
-        alert('[FAIL] ' + msg);
-    }
-},
+var FILENAME = 'database.db',
+
 file = {
     writer: { available: false },
     reader: { available: false }
-},
-dbEntries = [];
+};
         
 function gotFS(fs) {
-    var fail = failCB('getFile');
     fs.root.getFile(FILENAME, {create: true, exclusive: false},
-                            gotFileEntry, fail);
+                            gotFileEntry, null);
 }
 
 function gotFileEntry(fileEntry) {
-    var fail = failCB('createWriter');
     file.entry = fileEntry;
-
-    fileEntry.createWriter(gotFileWriter, fail);
+    fileEntry.createWriter(gotFileWriter, null);
     readText();
 }
 
@@ -35,7 +26,7 @@ function saveText(e) {
 
     dbEntries.push(e);
     
-    $('#login_errors').innerHTML = dbEntries.join('');
+    $('#login_errors').innerHTML = e;
 
     if (file.writer.available) {
         file.writer.available = false;
@@ -43,7 +34,7 @@ function saveText(e) {
             file.writer.available = true;
             file.writer.object.seek(0);
         }
-        file.writer.object.write(dbEntries.join("\n"));
+        file.writer.object.write(e);
     }
 
     return false;
@@ -61,7 +52,7 @@ function readText() {
                 $('#login_errors').innerHTML = dbEntries.join('');
             }
             reader.readAsText(dbFile);
-        }, failCB("FileReader"));
+        }, null);
     }
 
     return false;
