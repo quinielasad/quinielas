@@ -53,9 +53,6 @@ function onDeviceReady() {
     	}
         
     }, false );
-
-//acceso archivos.
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, null);
 }
 
 //funcion que añade las funcionalidad a los botones
