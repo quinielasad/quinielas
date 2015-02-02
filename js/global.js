@@ -32,10 +32,19 @@ function login(){
 	return false;
 }
 
-//funciones para evitar que funcione el backButton en android
+//añade la funcion onDeviceReady para que se ejecute en el evento ondeviceready 
+//(cuando el dispositivo este preparado y todo se haya cargado)
 document.addEventListener("deviceready", onDeviceReady, false);
+
+//funcion en la que se debeejecutar todo lo que se necesite dejar preparado a la hora de cargar la app
 function onDeviceReady() {
-    document.addEventListener("backbutton", function (e) {
+    //llamada a la funcion que establece la funcionalidad del backbutton
+    backButtonProperties();
+}
+
+//funciones para evitar que funcione el backButton en android
+function backButtonProperties(){
+	document.addEventListener("backbutton", function (e) {
     	if($.mobile.activePage.is("#home") ){
     		if (confirm("¿Quiere salir de la app?")) {
     			navigator.app.exitApp();
@@ -54,9 +63,11 @@ function onDeviceReady() {
         
     }, false );
 }
-
 //funcion que añade las funcionalidad a los botones
 $(document).ready(function(){
 	$("#login").submit(login);
+	$("#prueba").onClick(readFile(function (result){
+		alert(result);
+	}, "login.txt"));
 });
 
