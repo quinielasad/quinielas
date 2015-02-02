@@ -67,11 +67,11 @@ function backButtonProperties(){
 $(document).ready(function(){
 	$("#login").submit(login);
 
-	$("#prueba").click(readFile(function (result){
+	$("#prueba").on('click', readFile(function (result){
 		confirm(result);
 	}, "login.txt"));
 
-	$('#alert').click(function(){
+	$('#alert').on('click', function(){
 		confirm("ok alert");
 	});
 });
