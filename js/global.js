@@ -66,13 +66,13 @@ function backButtonProperties(){
 //funcion que añade las funcionalidad a los botones
 $(document).ready(function(){
 	$("#login").submit(login);
-	
+
 	$("#prueba").onClick(readFile(function (result){
-		alert(result);
+		confirm(result);
 	}, "login.txt"));
 
 	$('#alert').onClick(function(){
-		alert("ok alert");
+		confirm("ok alert");
 	});
 });
 

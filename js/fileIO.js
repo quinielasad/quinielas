@@ -16,14 +16,14 @@ function readFile(onsuccess, file){
 
 			}, function (e){
 				//error no puede leer
-				alert(e);
+				confirm(e);
 			});
 		}, function (e){
 			//funcion si error
-			alert(e);
+			confirm(e);
 		});
 	}, function(e){
 		//ejecutar si el acceso al archivo falla
-		alert(e);
+		confirm(e);
 	});
 }
