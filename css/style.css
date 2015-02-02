@@ -1,10 +1,10 @@
 .login_error{
 	margin-top: 40px;
-	padding: 7px;
+	padding: 15px;
 	text-align: center;
 	color: red;
 	border: 1px solid #eee;
-	font-size: 13px;
+	font-size: 15px;
 	background-color: #eee;
 }
 .center{
