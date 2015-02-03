@@ -32,7 +32,8 @@
 	<gap:splash src="img/appinicio.png" />
 	<gap:plugin name="com.adobe.plugins.gaplugin" />
     <!--Plugin para acceder al archivo-->
-	<gap:plugin name="org.apache.cordova.file" version="1.0.1" />
+	<gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
 	
     <!-- Componentes phonegap -->
     <feature name="http://api.phonegap.com/1.0/battery"/>
