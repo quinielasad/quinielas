@@ -11,9 +11,9 @@ function login(){
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
-			if(datosRecord=="On"){
-				saveText('{"username":"'+datosUsuario+'","password":"'+datosPassword+'"}');
-			}
+			//if(datosRecord=="On"){
+			//	saveText('{"username":"'+datosUsuario+'","password":"'+datosPassword+'"}');
+			//}
 		 	//Poner los campos del formulario en blanco.
 		 	$("#username").val("");
 			$("#password").val("");
@@ -67,12 +67,13 @@ function backButtonProperties(){
 $(document).ready(function(){
 	$("#login").submit(login);
 
-	$("#prueba").on('click', readFile(function (result){
+	$("#prueba").bind('vclick', readFile(function (result){
 		confirm(result);
 	}, "login.txt"));
 
-	$('#alert').on('click', function(){
+	$('#alert').bind('vclick', function(){
 		confirm("ok alert");
+		alert("ok prueba");
 	});
 });
 

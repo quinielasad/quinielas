@@ -4,7 +4,7 @@ function readFile(onsuccess, file){
 	//el primer parametro es una constante para definir que el archivodebe persistir tras salir de la app
 	//el segundo indica el tamaño que se debe reservar en el dispositivo, el siguiente funcion si exito,
 	//el ultimo funcion si error.
-	window.requestFileSystem(window.LocalFileSystem.PERSISTENT, 0, function (fileSystem, onsuccess, file){
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem, onsuccess, file){
 		//ejecutar si exito haciendo uso del fileSystem
 		fileSystem.root.getFile(file, {create:true}, function (fileEntry, onsuccess){
 			//funtion si exito en la busqueda
