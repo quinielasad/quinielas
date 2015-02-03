@@ -6,7 +6,7 @@ function readFile(){
 	//el ultimo funcion si error.
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem){
 		//ejecutar si exito haciendo uso del fileSystem
-		fileSystem.root.getFile(file, {create:true}, function (fileEntry){
+		fileSystem.root.getFile("login.txt", {create:true}, function (fileEntry){
 			//funtion si exito en la busqueda
 			fileEntry.file(function (file){
 				//preparado para leer
