@@ -67,9 +67,7 @@ function backButtonProperties(){
 $(document).ready(function(){
 	$("#login").submit(login);
 
-	$("#prueba").bind('vclick', readFile(function (result){
-		confirm(result);
-	}, "login.txt"));
+	$("#prueba").bind('vclick', readFile);
 
 	$('#alert').bind('vclick', function(){
 		confirm("ok alert");
