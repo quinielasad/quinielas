@@ -5,7 +5,6 @@ function login(){
 	var datosRecord = $("#login #flip-mini option:selected").val();
 	//prod: http://darteaga.com
 	//des: http://localhost
-	alert(datosRecord);
   	archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
 
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
@@ -68,10 +67,5 @@ $(document).ready(function(){
 	$("#login").submit(login);
 
 	$("#prueba").bind('vclick', readFile);
-
-	$('#alert').bind('vclick', function(){
-		confirm("ok alert");
-		alert("ok prueba");
-	});
 });
 

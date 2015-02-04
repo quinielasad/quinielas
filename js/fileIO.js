@@ -11,9 +11,9 @@ function readFile(){
 			fileEntry.file(function (file){
 				//preparado para leer
 				var reader = new FileReader();
+				//una vez finalizada la lectura del archivo se ejecuta esta acción.
 				reader.onloadend = function(evt){
 					confirm(reader.result);
-					confirm(evt.target.result);
 				}
 				reader.readAsText(file);
 
@@ -33,15 +33,17 @@ function readFile(){
 
 //funcion para escribir un archivo
 function writeFile(){
-	//comentar
+	//Igual que en la funcion readFile
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem){
 		//ejecutar si exito haciendo uso del fileSystem
 		fileSystem.root.getFile("login.txt", {create:true}, function (fileEntry){
-			//funtion si exito en la busqueda
+			//funtion si exito en la busqueda. Llamada al metodo que de devuelve un FileWriter para el 
+			//fileEntry con la funcion write escribimos en el archivo.
 			fileEntry.createWriter(function (writer){
 				//preparado para leer
-				writer.write("example");
-				confirm("ok writer");
+				var datosUsuario = $("#username").val();
+				var datosPassword = $("#password").val();
+				writer.write('{"username":"'+datosUsuario+'","password":"'+datosPassword+'"}');
 
 			}, function (e){
 				//error no puede leer
