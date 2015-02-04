@@ -5,13 +5,13 @@ function login(){
 	var datosRecord = $("#login #flip-mini option:selected").val();
 	//prod: http://darteaga.com
 	//des: http://localhost
-
+	alert(datosRecord);
   	archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
 
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
-			if(datosRecord=="On"){
+			if(datosRecord=="on"){
 				writeFile();
 			}
 		 	//Poner los campos del formulario en blanco.
