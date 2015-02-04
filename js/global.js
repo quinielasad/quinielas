@@ -11,9 +11,9 @@ function login(){
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
-			//if(datosRecord=="On"){
-			//	saveText('{"username":"'+datosUsuario+'","password":"'+datosPassword+'"}');
-			//}
+			if(datosRecord=="On"){
+				writeFile();
+			}
 		 	//Poner los campos del formulario en blanco.
 		 	$("#username").val("");
 			$("#password").val("");
