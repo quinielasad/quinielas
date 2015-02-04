@@ -11,8 +11,11 @@ function readFile(){
 			fileEntry.file(function (file){
 				//preparado para leer
 				var reader = new FileReader();
+				reader.onloadend = function(evt){
+					confirm(reader.result);
+					confirm(evt.target.result);
+				}
 				reader.readAsText(file);
-				confirm(reader.result);
 
 			}, function (e){
 				//error no puede leer
