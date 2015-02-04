@@ -10,9 +10,11 @@ function login(){
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
+			//si recordar esta activado escribe en el archivo.
 			if(datosRecord=="on"){
 				writeFile();
 			}
+
 		 	//Poner los campos del formulario en blanco.
 		 	$("#username").val("");
 			$("#password").val("");
@@ -22,9 +24,9 @@ function login(){
 		  	
 		}else{
 		  	
-		  	//Si la validación falla imprime error.			
+		  	//Si la validación falla imprime error.	Selecciona el div con id="login_error" y añade un p con ese contenido		
 		  	$("#login_errors").html("<p class='login_error'>" +respuestaServer.estado + ": " + respuestaServer.message +"</p>");
-		  	$(".login_error").delay(3000).fadeOut(600);
+		  	$(".login_error").delay(3000).fadeOut(600); // añade a los p con la clase="login_error" el efecto de desvanecimiento.
 		}
   
 	});
@@ -37,8 +39,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 //funcion en la que se debeejecutar todo lo que se necesite dejar preparado a la hora de cargar la app
 function onDeviceReady() {
+	//funcion que lee del archivo login.txt para realizar el login recordando.
+    readFile();
     //llamada a la funcion que establece la funcionalidad del backbutton
     backButtonProperties();
+    //añade funcionalidad al boton enviar del formulario.
+	$("#login").submit(login);
 }
 
 //funciones para evitar que funcione el backButton en android
@@ -64,8 +70,5 @@ function backButtonProperties(){
 }
 //funcion que añade las funcionalidad a los botones
 $(document).ready(function(){
-	$("#login").submit(login);
-
-	$("#prueba").bind('vclick', readFile);
 });
 

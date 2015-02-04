@@ -13,7 +13,13 @@ function readFile(){
 				var reader = new FileReader();
 				//una vez finalizada la lectura del archivo se ejecuta esta acción.
 				reader.onloadend = function(evt){
-					confirm(reader.result);
+					var recordar  = $.parseJSON(reader.result);
+					if (recordar.recordar == "on") {
+						/// recordar = on, muestra la pantalla "home"
+						$.mobile.changePage("#home");
+					}else{
+
+					}
 				}
 				reader.readAsText(file);
 
@@ -40,10 +46,8 @@ function writeFile(){
 			//funtion si exito en la busqueda. Llamada al metodo que de devuelve un FileWriter para el 
 			//fileEntry con la funcion write escribimos en el archivo.
 			fileEntry.createWriter(function (writer){
-				//preparado para leer
-				var datosUsuario = $("#username").val();
-				var datosPassword = $("#password").val();
-				writer.write('{"username":"'+datosUsuario+'","password":"'+datosPassword+'"}');
+
+				writer.write('{"recordar":"on"}');
 
 			}, function (e){
 				//error no puede leer
