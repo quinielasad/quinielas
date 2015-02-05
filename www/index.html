@@ -26,6 +26,7 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile.js"></script>
 		<script type="text/javascript" src="js/fileIO.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
     </head>
     <body>
@@ -41,10 +42,8 @@
 					<input type="text" id="username" placeholder="Username">
 					<input type="password" id="password" placeholder="Password">
 					<div class="containing-element">
-						<select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
-							<option value="off">Recordar</option>
-							<option value="on">Recordar</option>
-						</select>
+				          <input type="checkbox" name="recordar" id="recordar" class="custom">
+				          <label for="recordar">Recordar</label>
 					</div>
 					<input type="submit" value="Enviar"></input>	
 				</form>
@@ -60,7 +59,7 @@
 			<!--data-role="content" creamos una capa o div donde colocaremos el contenido del cuerpo de la pagina-->	
 			<div data-role="content">	 				
 				<div>
-					<div class="texto">
+					<div class="texto" id="bienvenida">
 			   			<!--<FONT FACE="Bradley Hand ITC">El farmacéutico de hospital ante el reto de la <b>SALUD 2.0</b></FONT> -->
 			   			Suerte Sopranos <b>Quiniela 1xS</b>
 					</div>		
@@ -79,7 +78,7 @@
 					<li data-icon="plus"><a href="#pagina3" data-transition="fade">Historico</a></li>
 					<li data-icon="plus"><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
 					<li data-icon="plus"><a href="#instrucciones" data-transition="fade">Leeme</a></li>
-					<li data-icon="plus"><a href="#login_page" data-transition="fade">Salir</a></li> 
+					<li data-icon="plus"><a href="#" id="logout" data-transition="fade">Cerrar sesión</a></li> 
 				</ul>		 				
 		    </div>
 		</div>

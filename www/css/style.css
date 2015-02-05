@@ -11,12 +11,11 @@
 	text-align: center;
 }
 
-.containing-element .ui-slider-switch { 
+.containing-element .ui-checkbox { 
 	width: 9em;
-}
-.containing-element .ui-slider{
 	float: left;
 	margin-right: 15px;
+	margin-top: 0px;
 }
 #login_page img {
 	max-width: 50%;
