@@ -15,7 +15,7 @@ function onDeviceReady() {
     backButtonProperties();
     //añade funcionalidad al boton enviar del formulario.
 	$("#login").submit(login);
-	//cuando cierra la sesion borra los datos del usuario del archivo.
+	//Añadiendo funcionalidad al boton "cerrar sesion" cuando cierra la sesion borra los datos del usuario del archivo.
 	$('#logout').on('vclick', writeFileLogout);
 }
 

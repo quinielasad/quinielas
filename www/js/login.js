@@ -5,7 +5,7 @@ function login(){
 	//prod: http://darteaga.com
 	//des: http://localhost
   	archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
-  	disableLoginForm ();
+
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
 		if(respuestaServer.estado == "OK"){
@@ -24,6 +24,7 @@ function login(){
 			if(datosRecord){
 				writeFileLogin();
 			}
+			
 			
 			//carga de datos...
 			$("#bienvenida").text("¡Hola " + _USER.datos['username']+"!");
