@@ -28,7 +28,7 @@
 		<script type="text/javascript" src="js/global.js"></script>
 		<script type="text/javascript" src="js/fileIO.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
-		
+		<script type="text/javascript" src="js/loadData.js"></script>
     </head>
     <body>
 	<!-- Jquery  Mobile utiliza los data de HTML 5, utilizare esto para indicar las componentes (page,header,content,footer) con estos atributos las librerias aplican
@@ -88,7 +88,7 @@
 		    <div data-role="panel" id="nav-panel" data-position-fixed="false" data-theme="a" data-display="reveal">	
 				<ul data-role="listview" data-theme="a" data-dividertheme="a"> 
 					<li data-role="header" style="background-color:#e9e9e9">Menú</li>
-					<li><a href="#pagina1" data-transition="fade" >Apuesta Comun</a></li>
+					<li><a href="#pagina1" data-transition="fade" onclick="getApuestaComun()" >Mi apuesta</a></li>
 					<li><a href="#pagina2" data-transition="fade">Clasificación</a></li>
 					<li><a href="#pagina3" data-transition="fade">Historico</a></li>
 					<li><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
@@ -98,38 +98,32 @@
 			</div>	
 		</div>
 		
-		<div data-role="page" id="pagina1">
+		<div data-role="page" class="ui-responsive-panel" id="pagina1">
 			<div data-role="header">
-				<h1><font >Apuesta Comun</font></h1>				
+				<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-shadow="true" ></a>
+				<h1><font >Mi apuesta</font></h1>
+				<a href="#" id="logout" data-icon="delete" data-iconpos="notext" data-shadow="true">Cerrar sesión</a>				
 			</div>
-			<div data-role="content">
-				<a data-rel="back" data-role="button" data-icon="casaT" data-inline="true" data-transition="fade">Casa</a>				
-				
+			<div data-role="content">			
 				<div class="titulo">
-					<p><b>La lista de apuestas comunes</b></p>
+					<p><b>Inserta tu apuesta.</b></p>
 				</div>
 				
             	<div data-role="content">    
-	       			<table>
-				       <tr><td><center>Partido</center></td><td><center>1</center></td><td><center>X</center></td><td><center>2</center></td></tr>
-			           <tr><td>Málaga - Villarreal</td><td>0%</td><td>0%</td><td>100%</td></tr>
-			           <tr><td>Atlhetic Club - Elche</td><td>10%</td><td>0%</td><td>90%</td></tr>
-			           <tr><td>Granada - Real Sociedad</td><td>10%</td><td>10%</td><td>80%</td></tr>
-			           <tr><td>Eibar - Getafe</td><td>0%</td><td>80%</td><td>20%</td></tr>
-			           <tr><td>Barcelona - At. Madrid</td><td>40%</td><td>50%</td><td>10%</td></tr>
-					   <tr><td>Celta - Valencia</td><td>0%</td><td>0%</td><td>100%</td></tr>
-			           <tr><td>Almeria - Sevilla</td><td>0%</td><td>10%</td><td>90%</td></tr>
-			           <tr><td>Sabadell - Sporting</td><td>5%</td><td>15%</td><td>80%</td></tr>
-			           <tr><td>Betis - Tenerife</td><td>80%</td><td>0%</td><td>20%</td></tr>
-			           <tr><td>Ponferradina - Racing</td><td>0%</td><td>90%</td><td>10%</td></tr>
-					   <tr><td>Albacete - Lugo</td><td>0%</td><td>0%</td><td>100%</td></tr>
-			           <tr><td>Girona - Mallorca</td><td>0%</td><td>10%</td><td>90%</td></tr>
-			           <tr><td>Valladolid - Alavés</td><td>90%</td><td>10%</td><td>0%</td></tr>
-			           <tr><td>Las Palmas - Zaragoza</td><td>60%</td><td>20%</td><td>20%</td></tr>
-			           <tr><td>R. Madrid - Espanyol</td><td>M</td><td>0</td></tr>
-	       			</table>
     			</div><!-- /content -->
+    			
 			</div><!-- /page -->
+			<div data-role="panel" id="nav-panel" data-position-fixed="false" data-theme="a" data-display="reveal">	
+				<ul data-role="listview" data-theme="a" data-dividertheme="a"> 
+					<li data-role="header" style="background-color:#e9e9e9">Menú</li>
+					<li><a href="#pagina1" data-transition="fade" >Mi apuesta</a></li>
+					<li><a href="#pagina2" data-transition="fade">Clasificación</a></li>
+					<li><a href="#pagina3" data-transition="fade">Historico</a></li>
+					<li><a href="#pagina4" data-transition="fade">Bote por persona</a></li>
+					<li><a href="#instrucciones" data-transition="fade">Leeme</a></li>
+					<li><a href="#" id="logout" data-transition="fade">Cerrar sesión</a></li> 
+				</ul>
+			</div>	
         </div>
 	  
 	  <!--Pagina de Clasificación -->
