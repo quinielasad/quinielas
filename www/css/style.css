@@ -10,7 +10,33 @@
 .center{
 	text-align: center;
 }
-
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+#bienvenida{
+	border-bottom: 1px solid #eee;
+	padding: 0px 7px 7px 7px;
+	margin-bottom: 7px;       
+}
+.contenido-nombre-jornada{
+	font-size: 13px;
+}
+.tabla-apuesta-comun{
+	width: 100%;
+	border-collapse: collapse;
+}
+.tabla-apuesta-comun th{
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+}
+.tabla-apuesta-comun td{
+	vertical-align: center;
+	padding: 5px 5px; 
+	font-size: 11px;
+}
 .containing-element .ui-checkbox { 
 	width: 9em;
 	float: left;

@@ -28,7 +28,7 @@ function login(){
 			
 			//carga de datos...
 			$("#bienvenida").text("¡Hola " + _USER.datos['username']+"!");
-			
+			getApuestaComun();//carga de la apuesta comun
 
 		}else{
 
