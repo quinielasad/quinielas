@@ -15,6 +15,11 @@ function onDeviceReady() {
     backButtonProperties();
     //añade funcionalidad al boton enviar del formulario.
 	$("#login").submit(login);
+	//funcionalidad al boton derecho salir
+	$('.exit').on('vclick',function(){
+		navigator.app.exitApp();
+	});
+	$(".apComun").on("vclick", getApuestaComun);
 	//Añadiendo funcionalidad al boton "cerrar sesion" cuando cierra la sesion borra los datos del usuario del archivo.
 	$('#logout').on('vclick', writeFileLogout);
 }

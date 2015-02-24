@@ -28,6 +28,7 @@ function login(){
 			
 			//carga de datos...
 			$("#bienvenida").text("¡Hola " + _USER.datos['username']+"!");
+			
 
 		}else{
 

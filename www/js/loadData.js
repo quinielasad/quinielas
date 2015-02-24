@@ -11,7 +11,7 @@ function getApuestaComun(){
 			//guardando los datos
 			jornada = respuestaServer.data;//guardamos un array que representa al usuario
 			
-			alert(jornada);
+			$("#home .contenido").html(jornada.jornada.nombre);
 
 		}else{
 		  	//Si la validación falla imprime error.	Selecciona el div con id="login_error" y añade un p con ese contenido		
