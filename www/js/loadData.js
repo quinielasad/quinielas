@@ -1,10 +1,28 @@
+//funcion que obtiene el estatus de la app
+function getStatus(){
+	archivoValidacion = _BASEURL+"getStatus.php?jsoncallback=?";//se localiza el servicio web
+	$.getJSON( archivoValidacion, null).done(function(respuestaServer) {
+		//si la respuesta del serivor es OK
+		if(respuestaServer.estado == "OK"){
+			//guardando los datos
+			_ESTADOAPP = respuestaServer.data;//guardamos el estado actual en una variable global.
+			
+		}else{
+		  	//Si la validación falla imprime error.	Selecciona el div con id=".wrapper-tabla" y añade un p con ese contenido		
+			$("#login_errors").html("<p class='login_error'>" +respuestaServer.estado + ": " + respuestaServer.message +"</p>");
+			$("#home .contenido .wrapper-tabla").html("<p class='login_error'>" +respuestaServer.estado + ": " + respuestaServer.message +"</p>");
+		  	$("#login_errors .login_error").delay(3000).fadeOut(600); // añade a los p con la clase="login_error" el efecto de desvanecimiento.
+		}
+  
+	});
+}
 //funcion que llama al servicio REST para apuesta comun y optiene la joranda Actual
 function getApuestaComun(){
-	var idJornada = "1";//id de la jornada actual utilizado para enviar al servicio web
+	var idJornada = _ESTADOAPP.joractual;//id de la jornada actual utilizado para enviar al servicio web
 	
 	//prod: http://darteaga.com
 	//des: http://localhost
-  	archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/getJornada.php?jsoncallback=?";//se localiza el servicio web
+  	archivoValidacion =  _BASEURL+"getJornada.php?jsoncallback=?";//se localiza el servicio web
 
   	//llama al servicio con una funcion que transforma el json devuelto en objeto javascript
 	$.getJSON( archivoValidacion+'&data={"id":"'+idJornada+'"}', null).done(function(respuestaServer) {

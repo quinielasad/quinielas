@@ -2,6 +2,8 @@
 
 //VARIABLES GLOBALES
 var _USER = new Object(); //variable global que representa al usuario que usa la app, objeto vacio al incializar.
+var _BASEURL = "http://darteaga.com/webapp/quinielas/api/v1/"
+var _ESTADOAPP = new Object();
 
 //añade la funcion onDeviceReady para que se ejecute en el evento ondeviceready 
 //(cuando el dispositivo este preparado y todo se haya cargado)
@@ -9,6 +11,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 //funcion en la que se debeejecutar todo lo que se necesite dejar preparado a la hora de cargar la app
 function onDeviceReady() {
+	//cargar estado de la app
+	getStatus();
 	//funcion que lee del archivo login.txt para realizar el login recordando.
     readFileLogin();
     //llamada a la funcion que establece la funcionalidad del backbutton

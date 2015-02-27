@@ -4,7 +4,7 @@ function login(){
 	var datosRecord = $("#recordar").is(":checked");//devuelve true si recordar esta seleccionado
 	//prod: http://darteaga.com
 	//des: http://localhost
-  	archivoValidacion = "http://darteaga.com/webapp/quinielas/api/v1/loginUser.php?jsoncallback=?";
+  	archivoValidacion =  _BASEURL+"loginUser.php?jsoncallback=?";
 
 	$.getJSON( archivoValidacion+'&data={"username":"'+datosUsuario+'","password":"'+datosPassword+'"}', null).done(function(respuestaServer) {
 
@@ -12,7 +12,7 @@ function login(){
 			//guardando los datos
 			_USER.datosjson = JSON.stringify(respuestaServer.data);//guardamos el JSON que representa al usuario
 			_USER.datos = respuestaServer.data;//guardamos un array que representa al usuario
-
+			
 		 	//Poner los campos del formulario en blanco.
 		 	$("#username").val("");
 			$("#password").val("");
