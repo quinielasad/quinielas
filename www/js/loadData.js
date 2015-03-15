@@ -1,12 +1,12 @@
 //funcion que obtiene el estatus de la app
-function getStatus(){
+function getStatus(callback){
 	archivoValidacion = _BASEURL+"getStatus.php?jsoncallback=?";//se localiza el servicio web
 	$.getJSON( archivoValidacion, null).done(function(respuestaServer) {
 		//si la respuesta del serivor es OK
 		if(respuestaServer.estado == "OK"){
 			//guardando los datos
 			_ESTADOAPP = respuestaServer.data;//guardamos el estado actual en una variable global.
-			
+			callback();
 		}else{
 		  	//Si la validación falla imprime error.	Selecciona el div con id=".wrapper-tabla" y añade un p con ese contenido		
 			$("#login_errors").html("<p class='login_error'>" +respuestaServer.estado + ": " + respuestaServer.message +"</p>");

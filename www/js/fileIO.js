@@ -21,7 +21,7 @@ function readFileLogin(){
 						
 						//carga de datos...
 						$("#bienvenida").text("¡Hola " + _USER.datos['username']+"!");
-						getApuestaComun();//carga de la apuesta comun
+						getStatus(getApuestaComun);//carga de la apuesta comun
 						/// recordar = on, muestra la pantalla "home"
 						$.mobile.changePage("#home");
 					}else{
