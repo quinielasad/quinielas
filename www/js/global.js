@@ -2,7 +2,7 @@
 
 //VARIABLES GLOBALES
 var _USER = new Object(); //variable global que representa al usuario que usa la app, objeto vacio al incializar.
-var _BASEURL = "http://darteaga.com/webapp/quinielas/api/v1/"
+var _BASEURL = "http://localhost/webapp/quinielas/api/v1/" //http://darteaga.com http://localhost
 var _ESTADOAPP = new Object();
 
 //añade la funcion onDeviceReady para que se ejecute en el evento ondeviceready 

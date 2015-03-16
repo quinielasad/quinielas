@@ -37,6 +37,19 @@
 	padding: 5px 5px; 
 	font-size: 11px;
 }
+.tabla-Miapuesta{
+	width: 100%;
+	border-collapse: collapse;
+}
+.tabla-Miapuesta th{
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+}
+.tabla-Miapuesta td{
+	vertical-align: center;
+	padding: 5px 5px; 
+	font-size: 11px;
+}
 .containing-element .ui-checkbox { 
 	width: 9em;
 	float: left;
