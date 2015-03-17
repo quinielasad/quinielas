@@ -4,6 +4,7 @@
 var _USER = new Object(); //variable global que representa al usuario que usa la app, objeto vacio al incializar.
 var _BASEURL = "http://darteaga.com/webapp/quinielas/api/v1/" //http://darteaga.com http://localhost
 var _ESTADOAPP = new Object();
+var _VALUEPLENO = ["0 - 0","0 - 1", "0 - 2", "0 - M", "1 - 0", "1 - 1", "1 - 2", "1 - M", "2 - 0", "2 - 1", "2 - 2", "2 - M", "M - 0", "M - 1", "M - 2","M - M"];
 
 //añade la funcion onDeviceReady para que se ejecute en el evento ondeviceready 
 //(cuando el dispositivo este preparado y todo se haya cargado)
@@ -25,7 +26,7 @@ function onDeviceReady() {
 	});
 	$(".apComun").on("vclick", getApuestaComun);
 	//Añadiendo funcionalidad al boton "cerrar sesion" cuando cierra la sesion borra los datos del usuario del archivo.
-	$('#logout').on('vclick', writeFileLogout);
+	$('.logout').on('vclick', writeFileLogout);
 }
 
 //funciones para evitar que funcione el backButton en android
