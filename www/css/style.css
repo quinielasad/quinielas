@@ -24,6 +24,10 @@
 .contenido-nombre-jornada{
 	font-size: 13px;
 }
+.estado-apuesta{
+	font-size: 13px;
+	margin-top: -20px
+}
 .tabla-apuesta-comun{
 	width: 100%;
 	border-collapse: collapse;
@@ -43,11 +47,11 @@
 }
 .tabla-Miapuesta th{
 	border-bottom: 1px solid black;
-	padding-bottom: 5px;
+	/*padding-bottom: 5px;*/
 }
 .tabla-Miapuesta td{
 	vertical-align: center;
-	padding: 5px 5px; 
+	padding: 5px 5px 0px 5px; 
 	font-size: 11px;
 }
 .containing-element .ui-checkbox { 
@@ -64,3 +68,21 @@
 .ui-panel-inner{
 	border-right: 1px solid #ddd;
 }
+.ui-bar-inherit{
+	background-color: #000!important;
+	color:#fff !important;
+	text-shadow: none !important;
+	border-top: none !important;
+}
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active {
+  background-color: #d60b11 !important;
+  border-color: #d60b11 !important;
+  color: #fff;
+  text-shadow: 0 1px 0 #d60b11 !important;
+}
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head+body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head+body .ui-btn-a.ui-focus, html head+body .ui-body-a.ui-focus {
+  -webkit-box-shadow: 0 0 12px #d60b11 !important;
+  -moz-box-shadow: 0 0 12px #d60b11 !important;
+  box-shadow: 0 0 12px #d60b11 !important;
+}
+/*#d60b11*/

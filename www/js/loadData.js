@@ -31,12 +31,11 @@ function getApuestaComun(){
 			//guardando los datos
 			jornada = respuestaServer.data;//guardamos la jornada en una variable
 			
-			$("#home .contenido-nombre-jornada").html(jornada.jornada.nombre); //modificamos el nobre de la jornada que se localiza en ese <div>
+			$("#home .contenido-nombre-jornada").html(""); //modificamos el nobre de la jornada que se localiza en ese <div>
 			var table = $("<table class='tabla-apuesta-comun'>"+ //creamos a tabla a añadir al html
 								"<tr class='linea-cabecera'>"+
 									"<th></th>"+
-									"<th class='left'>Local</th>"+
-									"<th class='left'>Visitante</th>"+
+									"<th class='left' colspan='2' >"+jornada.jornada.nombre+"</th>"+
 									"<th>1</th>"+
 									"<th>X</th>"+
 									"<th>2</th>"+
@@ -48,25 +47,22 @@ function getApuestaComun(){
 				if(jornada.partidos[partido].espleno != 1){ //si no es pleno añadimos una linea de la tabla con sus datos
 					table.append("<tr>"+
 									"<td class='right' style='border:none'>"+ipartido+"</td>"+
-									"<td>"+jornada.partidos[partido].local+"</td>"+
-									"<td>"+jornada.partidos[partido].visitante+"</td>"+
+									"<td colspan='2'>"+jornada.partidos[partido].local+" - "+jornada.partidos[partido].visitante+"</td>"+
 									"<td class='center rcomun'>"+Math.round(jornada.partidos[partido].xcomun)+"</td>"+
 									"<td class='center rcomun'>"+Math.round(jornada.partidos[partido].ycomun)+"</td>"+
-									"<td class='center rcomun'>"+Math.round(jornada.partidos[partido].zcomun)+"</td>"+
+									"<td class='center rcomun'>"+Math.round(jornada.partidos[partido].zcomun)	+"</td>"+
 								"</tr>");
 				}else{//si es pleno añadimos una linea mas de cabeceras y los datos del pleno
 					table.append("<tr class='linea-cabecera'>"+
 									"<th></th>"+
-									"<th colspan='2' class='left'>Pleno al quince</th>"+
-									"<th colspan='2'>Valor</th>"+
+									"<th colspan='2' class='left'></th>"+
+									"<th colspan='2'></th>"+
 									"<th></th>"+
 								"</tr>");
 					table.append("<tr>"+
 									"<td class='right' style='border:none'><b>"+ipartido+"</b></td>"+
-									"<td><b>"+jornada.partidos[partido].local+"</b></td>"+
-									"<td><b>"+jornada.partidos[partido].visitante+"</b></td>"+
-									"<td class='center rcomun'><b>"+_VALUEPLENO[jornada.partidos[partido].xcomun-1]+"</b></td>"+
-									"<td class='center rcomun' colspan='2'></td>"+
+									"<td colspan='2'><b>"+jornada.partidos[partido].local+" - "+jornada.partidos[partido].visitante+"</b></td>"+
+									"<td class='center rcomun' colspan='3'><b>"+_VALUEPLENO[jornada.partidos[partido].xcomun-1]+"</b></td>"+
 								"</tr>");
 				}
 			}//añadimos la tabla al contenido de la pagina para mostrar
@@ -98,13 +94,12 @@ function getMiApuesta(){
 		if(respuestaServer.estado == "OK"){
 			//guardando los datos
 			jornada = respuestaServer.data;//guardamos la jornada en una variable
-			
-			$("#myAp .contenido-nombre-jornada").html("Estado: "+ _ESTADOAPP.estado + " <button onclick='setMiApuesta()' class='ui-btn ui-input-btn ui-corner-all ui-shadow' data-role='button'>Guardar</button>"); //modificamos el nobre de la jornada que se localiza en ese <div>
+			$("#myAp .estado-apuesta").html("Estado: "+ _ESTADOAPP.estado);
+			$("#myAp .contenido-nombre-jornada").html("<button onclick='setMiApuesta()' class='ui-btn ui-input-btn ui-corner-all ui-shadow' data-role='button'>Guardar</button>"); //modificamos el nobre de la jornada que se localiza en ese <div>
 			var table = $("<table class='tabla-Miapuesta'>"+ //creamos a tabla a añadir al html
 								"<tr class='linea-cabecera'>"+
 									"<th></th>"+
-									"<th class='left'>Local</th>"+
-									"<th class='left'>Visitante</th>"+
+									"<th class='left' colspan='2'>"+jornada.jornada.nombre+"</th>"+
 									"<th>Apuesta</th>"+
 								"</tr>"+
 							"</table>");
@@ -114,8 +109,7 @@ function getMiApuesta(){
 				if(jornada.partidos[partido].espleno != 1){ //si no es pleno añadimos una linea de la tabla con sus datos
 					table.append("<tr>"+
 									"<td class='right' style='border:none'>"+ipartido+"</td>"+
-									"<td>"+jornada.partidos[partido].local+"</td>"+
-									"<td>"+jornada.partidos[partido].visitante+"</td>"+
+									"<td colspan='2'>"+jornada.partidos[partido].local+" - "+jornada.partidos[partido].visitante+"</td>"+
 									"<td class='center'><select type='text' class='partido' id='"+jornada.partidos[partido].id+"'>"+
 															"<option value='0'>.</option>"+
 															"<option value='1'>1</option>"+
@@ -126,15 +120,14 @@ function getMiApuesta(){
 
 								"</tr>");
 				}else{//si es pleno añadimos una linea mas de cabeceras y los datos del pleno
-					table.append("<tr class='linea-cabecera'>"+
+					/*table.append("<tr class='linea-cabecera'>"+
 									"<th></th>"+
-									"<th colspan='2' class='left'>Pleno al quince</th>"+
-									"<th>V</th>"+
-								"</tr>");
+									"<th colspan='2' class='left'></th>"+
+									"<th></th>"+
+								"</tr>");*/
 					table.append("<tr>"+
 									"<td class='right' style='border:none'><b>"+ipartido+"</b></td>"+
-									"<td><b>"+jornada.partidos[partido].local+"</b></td>"+
-									"<td><b>"+jornada.partidos[partido].visitante+"</b></td>"+
+									"<td colspan='2'><b>"+jornada.partidos[partido].local+" - "+jornada.partidos[partido].visitante+"</b></td>"+
 									"<td class='center'><select type='text' class='partido ' id='"+jornada.partidos[partido].id+"'>"+
 															"<option value='0'>...</option>"+
 															"<option value='1'>0 - 0</option>"+
