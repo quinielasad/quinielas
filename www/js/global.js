@@ -18,6 +18,8 @@ function onDeviceReady() {
     readFileLogin();
     //llamada a la funcion que establece la funcionalidad del backbutton
     backButtonProperties();
+    //crearpanel
+    $("#nav-panel").panel().enhanceWithin();
     //añade funcionalidad al boton enviar del formulario.
 	$("#login").submit(login);
 	//funcionalidad al boton derecho salir

@@ -95,8 +95,10 @@
 }
 .ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
     border-top-width: 0 !important;
+    border-right-width: 0 !important;
 }
 .ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
 .ui-li-static.ui-collapsible > .ui-collapsible-content {
     border-bottom-width: 0 !important;
+    border-right-width: 0 !important;
 }
