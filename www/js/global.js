@@ -33,7 +33,7 @@ function onDeviceReady() {
 function backButtonProperties(){
 	//añade la ejecucion de la funcion cuando el boton back es pulsado.
 	document.addEventListener("backbutton", function (e) {
-    	if($.mobile.activePage.is("#home") ){ //Accion del boton back si es home
+    	//if($.mobile.activePage.is("#home") ){ //Accion del boton back si es home
 
     		if (confirm("¿Quiere salir de la app?")) { //pregunta si desea salir
     			navigator.app.exitApp(); //funcion que provoca la salida de la app
@@ -41,17 +41,17 @@ function backButtonProperties(){
     			e.preventDefault(); //funcion que anula la accion por defecto del boton back
     		} 
 
-    	}else if ($.mobile.activePage.is("#login_page")){ //acciones a realizar si el boton es pulsado en la pagina de login
+    	//}else if ($.mobile.activePage.is("#login_page")){ //acciones a realizar si el boton es pulsado en la pagina de login
 
-    		if (confirm("¿Quiere salir de la app?")) {//pregunta si desea salir
-    			navigator.app.exitApp();//funcion que provoca la salida de la app
-    		}else{
-    			e.preventDefault();//funcion que anula la accion por defecto del boton back
-    		} 
+    	//	if (confirm("¿Quiere salir de la app?")) {//pregunta si desea salir
+    	//		navigator.app.exitApp();//funcion que provoca la salida de la app
+    	//	}else{
+    	//		e.preventDefault();//funcion que anula la accion por defecto del boton back
+    	//	} 
 
-    	}else{ //accion a realizar en el resto de paginas.
-    		navigator.app.backHistory();   		
-    	}
+    	//}else{ //accion a realizar en el resto de paginas.
+    	//	navigator.app.backHistory();   		
+    	//}
         
     }, false );
 }
